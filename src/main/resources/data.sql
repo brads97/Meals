@@ -1,0 +1,16 @@
+insert into meals (mealName, calories, gramsProtein, gramsCarbs, gramsFat, timeToCook) values ('Grilled Chicken Salad', 300, '25g', '10g', '20g', '15 mins');
+insert into meals (mealName, calories, gramsProtein, gramsCarbs, gramsFat, timeToCook) values ('Grilled Chicken Salad', 300, '25g', '10g', '20g', '15 mins');
+insert into meals (mealName, calories, gramsProtein, gramsCarbs, gramsFat, timeToCook) values ('Vegetable Omelette', 250, '18g', '10g', '15g', '10 mins');
+insert into meals (mealName, calories, gramsProtein, gramsCarbs, gramsFat, timeToCook) values ('Tofu and Vegetable Stir Fry', 400, '20g', '40g', '15g', '25 mins');
+insert into meals (mealName, calories, gramsProtein, gramsCarbs, gramsFat, timeToCook) values ('Baked Salmon with Sweet Potatoes', 450, '30g', '30g', '25g', '30 mins');
+insert into meals (mealName, calories, gramsProtein, gramsCarbs, gramsFat, timeToCook) values ('Spinach and Feta Stuffed Chicken', 400, '35g', '10g', '20g', '35 mins');
+insert into meals (mealName, calories, gramsProtein, gramsCarbs, gramsFat, timeToCook) values ('Black Bean and Corn Quesadilla', 350, '15g', '35g', '10g', '20 mins');
+insert into meals (mealName, calories, gramsProtein, gramsCarbs, gramsFat, timeToCook) values ('Beef and Broccoli', 500, '35g', '25g', '30g', '30 mins');
+insert into meals (mealName, calories, gramsProtein, gramsCarbs, gramsFat, timeToCook) values ('Pesto Pasta with Cherry Tomatoes', 400, '15g', '50g', '20g', '20 mins');
+insert into meals (mealName, calories, gramsProtein, gramsCarbs, gramsFat, timeToCook) values ('Grilled Pork Chops with Roasted Vegetables', 450, '30g', '20g', '30g', '40 mins');
+insert into meals (mealName, calories, gramsProtein, gramsCarbs, gramsFat, timeToCook) values ('Quinoa and Black Bean Bowl', 350, '15g', '40g', '10g', '25 mins');
+insert into meals (mealName, calories, gramsProtein, gramsCarbs, gramsFat, timeToCook) values ('Lentil Soup with Kale', 300, '20g', '30g', '10g', '45 mins');
+insert into meals (mealName, calories, gramsProtein, gramsCarbs, gramsFat, timeToCook) values ('Pulled Pork Sandwich', 500, '25g', '40g', '20g', '20 mins');
+insert into meals (mealName, calories, gramsProtein, gramsCarbs, gramsFat, timeToCook) values ('Sweet and Sour Chicken', 450, '30g', '25g', '25g', '30 mins');
+insert into meals (mealName, calories, gramsProtein, gramsCarbs, gramsFat, timeToCook) values ('Roasted Vegetable Salad', 300, '10g', '20g', '25g', '20 mins');
+insert into meals (mealName, calories, gramsProtein, gramsCarbs, gramsFat, timeToCook) values ('Mediterranean Chicken and Couscous', 400, '30g', '30g', '15g', '25 mins');

@@ -1,7 +1,9 @@
 package BS.Meals.Controller;
 
 import BS.Meals.Manager.MealsManager;
+import BS.Meals.Service.MealsService;
 import BS.Meals.User.Meals;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -12,15 +14,21 @@ import java.util.List;
 @RequestMapping("/meals")
 public class MealsController {
 
-    private MealsManager mealsManager;
-    public MealsController(final MealsManager mealsManager) {
-        this.mealsManager = mealsManager;
+    @Autowired
+    public MealsController(final MealsService mealsService) {
+        this.mealsService = mealsService;
     }
+
+    private MealsService mealsService;
 
     @GetMapping
     public List<Meals> getAllMeals() {
-        return mealsManager.getNumberOfMeals();
+        return mealsService.getAllMeals();
+    }
 
-
+    @GetMapping("/chicken")
+    public List<Meals> test() {
+        return mealsService.getChickenMeals();
     }
 }
+

@@ -3,6 +3,7 @@ package BS.Meals.User;
 public class Meals {
 
     private int id;
+    private String mealType;
     private String mealName;
     private int calories;
     private String gramsProtein;
@@ -16,6 +17,14 @@ public class Meals {
 
     public void setId(int id) {
         this.id = id;
+    }
+
+    public String getMealType() {
+        return mealType;
+    }
+
+    public void setMealType(String mealType) {
+        this.mealType = mealType;
     }
 
     public String getMealName() {

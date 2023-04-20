@@ -59,7 +59,7 @@ insert into meals (mealType, mealName, calories, gramsProtein, gramsCarbs, grams
 insert into meals (mealType, mealName, calories, gramsProtein, gramsCarbs, gramsFat, timeToCook) values ('Lunch','Shrimp and Vegetable Stir Fry', 400, '20g', '30g', '15g', '20 mins');
 insert into meals (mealType, mealName, calories, gramsProtein, gramsCarbs, gramsFat, timeToCook) values ('Lunch','Southwestern Quinoa Salad', 350, '15g', '30g', '10g', '20 mins');
 insert into meals (mealType, mealName, calories, gramsProtein, gramsCarbs, gramsFat, timeToCook) values ('Breakfast','Greek Yogurt Parfait with Berries and Granola', 300, '20g', '40g', '10g', '5 mins');
-insert into meals (mealType, mealName, calories, gramsProtein, gramsCarbs, gramsFat, timeToCook) values ('Breakfast','Avocado Toast with Poached Egg', 350, '15g', '30g', '20g', '10 mins');
+insert into meals (mealType, mealName, calories, gramsProtein, gramsCarbs, gramsFat, timeToCook) values ('Breakfast','Avocado Toast with Poached Eggs', 350, '15g', '30g', '20g', '10 mins');
 insert into meals (mealType, mealName, calories, gramsProtein, gramsCarbs, gramsFat, timeToCook) values ('Breakfast','Oatmeal with Banana and Peanut Butter', 400, '15g', '50g', '10g', '10 mins');
 insert into meals (mealType, mealName, calories, gramsProtein, gramsCarbs, gramsFat, timeToCook) values ('Breakfast','Egg and Cheese Sandwich', 450, '20g', '30g', '20g', '10 mins');
 insert into meals (mealType, mealName, calories, gramsProtein, gramsCarbs, gramsFat, timeToCook) values ('Breakfast','Smoothie Bowl with Mixed Berries and Almond Milk', 300, '10g', '50g', '5g', '5 mins');

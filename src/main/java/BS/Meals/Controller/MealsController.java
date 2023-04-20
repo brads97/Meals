@@ -3,15 +3,14 @@ package BS.Meals.Controller;
 import BS.Meals.Manager.MealsManager;
 import BS.Meals.Service.MealsService;
 import BS.Meals.User.Meals;
+import ch.qos.logback.core.model.Model;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
 @RestController
-@RequestMapping("/meals")
+@RequestMapping("/meal-plan")
 public class MealsController {
 
     @Autowired
@@ -21,7 +20,7 @@ public class MealsController {
 
     private MealsService mealsService;
 
-    @GetMapping
+    @GetMapping("/all-meals")
     public List<Meals> getAllMeals() {
         return mealsService.getAllMeals();
     }
@@ -30,5 +29,12 @@ public class MealsController {
     public List<Meals> test() {
         return mealsService.getChickenMeals();
     }
+
+    @PostMapping
+    public List<Meals> postMealPlan(@RequestBody Meals request) {
+        return mealsService.postMealPlan(request.getBreakfastFoodType(),request.getLunchFoodType(),request.getDinnerFoodType1(),request.getDinnerFoodType2());
+    }
+
+
 }
 

@@ -15,6 +15,7 @@ public class MealsService {
     // Created the constructor for the MealsManager class to then use JdbcTemplate object to execute queries and update statements against the database.
     // Final keyword meaning that it cannot be reassigned within the constructor.
     JdbcTemplate jdbcTemplate;
+
     @Autowired // Not required when just one constructor, simply for understanding.
     public MealsService(JdbcTemplate jdbcTemplate) {
         this.jdbcTemplate = jdbcTemplate;
@@ -26,6 +27,7 @@ public class MealsService {
     public List<Meals> getAllMeals() {
         return jdbcTemplate.query("SELECT * FROM meals", new MealsManager.MealMapper());
     }
+
     public List<Meals> getChickenMeals() {
         List<Meals> mealsList = new ArrayList<>();
         for (Meals meal : getAllMeals()) {
@@ -36,4 +38,63 @@ public class MealsService {
         return mealsList;
 
     }
+
+    public List<Meals> postMealPlan(String breakfastFoodType, String lunchFoodType, String dinnerFoodType1, String dinnerFoodType2) {
+
+        List<Meals> filteredMeals = new ArrayList<>();
+
+        boolean foundBreakfast = false;
+        boolean foundLunch = false;
+        boolean foundDinner = false;
+
+        for (Meals meal : getAllMeals()) {
+            if (!foundBreakfast && meal.getMealType().equals("Breakfast") && meal.getMealName().contains(breakfastFoodType) && meal.getCalories() < 400) {
+                filteredMeals.add(meal);
+                foundBreakfast = true;
+            } else if (!foundLunch && meal.getMealType().equals("Lunch") && meal.getMealName().contains(lunchFoodType) && meal.getCalories() < 800) {
+                filteredMeals.add(meal);
+                foundLunch = true;
+            } else if (!foundDinner && meal.getMealType().equals("Dinner") && (meal.getMealName().contains(dinnerFoodType1) || meal.getMealName().contains(dinnerFoodType2)) && meal.getCalories() <= 800) {
+                filteredMeals.add(meal);
+                foundDinner = true;
+            }
+            if (foundBreakfast && foundLunch && foundDinner) {
+                break;
+            }
+        }
+        return filteredMeals;
+    }
 }
+
+//    List<Meals> filteredMeals = new ArrayList<>();
+//
+//        // Filter breakfast meals with eggs and under 400 calories
+//        for (Meals meal : getAllMeals()) {
+//            if (meal.getMealType().equals("Breakfast") &&
+//                    meal.getMealName().contains("Eggs") &&
+//                    meal.getCalories() < 400) {
+//                filteredMeals.add(meal);
+//                break;
+//            }
+//        }
+//            // Filter lunch meals with chicken and 800 calories or less
+//        for (Meals meal : getAllMeals()) {
+//            if (meal.getMealType().equals("Lunch") &&
+//                    meal.getMealName().contains("Chicken") &&
+//                    meal.getCalories() < 800) {
+//                filteredMeals.add(meal);
+//                break;
+//            }
+//        }
+//           // Filter dinner meals with beef or chicken and 800 calories or less
+//        for (Meals meal : getAllMeals()) {
+//            if (meal.getMealType().equals("Dinner") &&
+//                    (meal.getMealName().contains("Beef") || meal.getMealName().contains("Chicken")) &&
+//                    meal.getCalories() <= 800) {
+//                filteredMeals.add(meal);
+//                break;
+//            }
+//        }
+//            return filteredMeals;
+//        }
+

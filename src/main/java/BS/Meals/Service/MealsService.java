@@ -39,6 +39,7 @@ public class MealsService {
 
     }
 
+    // Could alternatively put these inputs into a List<String> foodTypes to shorten it, and access via .contains(foodTypes.get(0)) etc.
     public List<Meals> postMealPlan(String breakfastFoodType, String lunchFoodType, String dinnerFoodType1, String dinnerFoodType2) {
 
         List<Meals> filteredMeals = new ArrayList<>();

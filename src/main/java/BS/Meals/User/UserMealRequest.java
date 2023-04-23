@@ -2,6 +2,11 @@ package BS.Meals.User;
 
 public class UserMealRequest {
 
+    private String preferredFoodBreakfast;
+    private String preferredFoodLunch;
+    private String preferredFoodDinner;
+    private Integer calories;
+
     public String getPreferredFoodBreakfast() {
         return preferredFoodBreakfast;
     }
@@ -33,10 +38,5 @@ public class UserMealRequest {
     public void setCalories(Integer calories) {
         this.calories = calories;
     }
-
-    private String preferredFoodBreakfast;
-    private String preferredFoodLunch;
-    private String preferredFoodDinner;
-    private Integer calories;
 
 }

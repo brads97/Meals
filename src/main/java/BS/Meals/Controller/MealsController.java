@@ -12,12 +12,12 @@ import java.util.List;
 @RequestMapping("/meal-plan")
 public class MealsController {
 
+    private final MealsService mealsService;
+
     @Autowired
     public MealsController(final MealsService mealsService) {
         this.mealsService = mealsService;
     }
-
-    private final MealsService mealsService;
 
     @GetMapping("/all-meals")
     public List<Meals> getAllMeals() {
@@ -25,8 +25,13 @@ public class MealsController {
     }
 
     @GetMapping("/chicken")
-    public List<Meals> test() {
+    public List<Meals> getChicken() {
         return mealsService.getChickenMeals();
+    }
+
+    @PostMapping("userMeal")
+    public List<Meals> addMeal(@RequestBody Meals meal) {
+        return mealsService.addMeal(meal);
     }
 
     @PostMapping("/customMeal")

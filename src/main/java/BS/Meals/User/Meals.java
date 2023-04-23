@@ -5,7 +5,7 @@ public class Meals {
     private int id;
     private String mealType;
     private String mealName;
-    private int calories;
+    private Integer calories;
     private String gramsProtein;
     private String gramsCarbs;
     private String gramsFat;
@@ -34,14 +34,6 @@ public class Meals {
 
     public void setMealName(String mealName) {
         this.mealName = mealName;
-    }
-
-    public int getCalories() {
-        return calories;
-    }
-
-    public void setCalories(int calories) {
-        this.calories = calories;
     }
 
     public String getGramsProtein() {
@@ -76,5 +68,12 @@ public class Meals {
         this.timeToCook = timeToCook;
     }
 
+    public Integer getCalories() {
+        return calories;
+    }
+
+    public void setCalories(Integer calories) {
+        this.calories = calories;
+    }
 }
 

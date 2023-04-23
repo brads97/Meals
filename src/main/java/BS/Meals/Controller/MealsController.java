@@ -1,10 +1,8 @@
 package BS.Meals.Controller;
 
-import BS.Meals.Manager.MealsManager;
 import BS.Meals.Service.MealsService;
 import BS.Meals.User.Meals;
-import BS.Meals.User.UserRequest;
-import ch.qos.logback.core.model.Model;
+import BS.Meals.User.UserMealRequest;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -31,9 +29,9 @@ public class MealsController {
         return mealsService.getChickenMeals();
     }
 
-    @PostMapping
-    public List<Meals> postMealPlan(@RequestBody UserRequest request) {
-        return mealsService.postMealPlan(request.getBreakfastFoodType(),request.getLunchFoodType(),request.getDinnerFoodType1(),request.getDinnerFoodType2());
+    @PostMapping("/customMeal")
+    public List<Meals> postMealPlan(@RequestBody UserMealRequest request) {
+        return mealsService.postMealPlan(request.getPreferredFoodBreakfast(), request.getPreferredFoodLunch(), request.getPreferredFoodDinner(), request.getCalories());
     }
 }
 

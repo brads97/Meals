@@ -27,6 +27,14 @@ public class MealsService {
     public List<Meals> getAllMeals() {
         return jdbcTemplate.query("SELECT * FROM meals", new MealsManager.MealMapper());
     }
+ // remove get(0) to return all for each mealType. or getRandom for random, look at making get unique for a week.
+    public Meals getMealsByUserRequest(String mealType, String preferredFood, int calories) {
+        String sql = "SELECT * FROM meals WHERE mealType = ? AND mealName LIKE ? AND calories <= ?";
+        return jdbcTemplate.query(sql, new Object[]{mealType, "%" + preferredFood + "%", calories}, new MealsManager.MealMapper()).get(0);
+    }
+
+
+
 
     public List<Meals> getChickenMeals() {
         List<Meals> mealsList = new ArrayList<>();
@@ -40,30 +48,19 @@ public class MealsService {
     }
 
     // Could alternatively put these inputs into a List<String> foodTypes to shorten it, and access via .contains(foodTypes.get(0)) etc.
-    public List<Meals> postMealPlan(String breakfastFoodType, String lunchFoodType, String dinnerFoodType1, String dinnerFoodType2) {
+    public List<Meals> postMealPlan(String breakfastFood, String lunchFood, String dinnerFood, Integer calories) {
+        int caloriesPerMeal = calories / 3;
 
-        List<Meals> filteredMeals = new ArrayList<>();
+        List<Meals> dayMeals = new ArrayList<>();
+//        List<String> mealNames = List.of("Breakfast", "Lunch", "Dinner");
+//
+//        mealNames.forEach(meal -> getMealsByUserRequest(meal, breakfastFood, caloriesPerMeal));
 
-        boolean foundBreakfast = false;
-        boolean foundLunch = false;
-        boolean foundDinner = false;
+        dayMeals.add(getMealsByUserRequest("Breakfast", breakfastFood, caloriesPerMeal));
+        dayMeals.add(getMealsByUserRequest("Lunch", lunchFood, caloriesPerMeal));
+        dayMeals.add(getMealsByUserRequest("Dinner", dinnerFood, caloriesPerMeal));
 
-        for (Meals meal : getAllMeals()) {
-            if (!foundBreakfast && meal.getMealType().equals("Breakfast") && meal.getMealName().contains(breakfastFoodType) && meal.getCalories() < 400) {
-                filteredMeals.add(meal);
-                foundBreakfast = true;
-            } else if (!foundLunch && meal.getMealType().equals("Lunch") && meal.getMealName().contains(lunchFoodType) && meal.getCalories() < 800) {
-                filteredMeals.add(meal);
-                foundLunch = true;
-            } else if (!foundDinner && meal.getMealType().equals("Dinner") && (meal.getMealName().contains(dinnerFoodType1) || meal.getMealName().contains(dinnerFoodType2)) && meal.getCalories() <= 800) {
-                filteredMeals.add(meal);
-                foundDinner = true;
-            }
-            if (foundBreakfast && foundLunch && foundDinner) {
-                break;
-            }
-        }
-        return filteredMeals;
+        return dayMeals;
     }
 }
 

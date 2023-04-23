@@ -13,7 +13,6 @@ import java.util.List;
 @Component
 public class MealsManager {
 
-    // The MealMapper class implements the interface RowMapper. These are mapped to the Meals object.
     // When the mapRow method of the MealMapper class is called, the "ResultSet rs" is a PreparedStatement object which when it is called, a query is sent to the database management system. (our sql files)
     // This info is then read in. So if it reads a VARCHAR, then we can use getString method to return the value for that column.
     public static class MealMapper implements RowMapper<Meals> {

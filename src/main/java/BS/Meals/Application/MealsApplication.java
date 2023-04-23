@@ -14,8 +14,3 @@ public class MealsApplication {
 
 }
 
-// Keep everything the same for the moment, jdbc.
-// Maybe be able to add in a meal. Ignore  JPA for just now, make additional branch. Can work on JPA,
-// connection to sql DB etc on other branches, show if necessary. Continue to work on adding additional functionality
-
-// to it up until interview, i.e. meals for the week and potentially joined tables.

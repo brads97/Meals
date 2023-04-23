@@ -8,14 +8,9 @@ import org.springframework.context.annotation.ComponentScan;
 @SpringBootApplication
 public class MealsApplication {
 
-	public static void main(String[] args) {
-		SpringApplication.run(MealsApplication.class, args);
-	}
+    public static void main(String[] args) {
+        SpringApplication.run(MealsApplication.class, args);
+    }
 
 }
 
-// Keep everything the same for the moment, jdbc.
-// Maybe be able to add in a meal. Ignore  JPA for just now, make additional branch. Can work on JPA,
-// connection to sql DB etc on other branches, show if necessary. Continue to work on adding additional functionality
-
-// to it up until interview, i.e. meals for the week and potentially joined tables.

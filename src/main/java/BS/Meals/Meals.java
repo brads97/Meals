@@ -3,19 +3,28 @@ package BS.Meals;
 import jakarta.persistence.*;
 
 @Entity
+@Table(name = "meals")
 public class Meals {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
+    @Column(name = "mealType")
     private String mealType;
+    @Column(name = "mealName")
     private String mealName;
+    @Column(name = "calories")
     private int calories;
+    @Column(name = "gramsProtein")
     private String gramsProtein;
+    @Column(name = "gramsCarbs")
     private String gramsCarbs;
+    @Column(name = "gramsFat")
     private String gramsFat;
+    @Column(name = "timeToCook")
     private String timeToCook;
+
     public Meals() {
     }
 
@@ -93,19 +102,6 @@ public class Meals {
         this.timeToCook = timeToCook;
     }
 
-    @Override
-    public String toString() {
-        return "Meals{" +
-                "id=" + id +
-                ", mealType='" + mealType + '\'' +
-                ", mealName='" + mealName + '\'' +
-                ", calories=" + calories +
-                ", gramsProtein='" + gramsProtein + '\'' +
-                ", gramsCarbs='" + gramsCarbs + '\'' +
-                ", gramsFat='" + gramsFat + '\'' +
-                ", timeToCook='" + timeToCook + '\'' +
-                '}';
-    }
 }
 
 

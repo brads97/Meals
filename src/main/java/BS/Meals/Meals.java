@@ -1,8 +1,14 @@
-package BS.Meals.User;
+package BS.Meals;
 
+import jakarta.persistence.*;
+
+@Entity
 public class Meals {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
+
     private String mealType;
     private String mealName;
     private int calories;
@@ -10,7 +16,18 @@ public class Meals {
     private String gramsCarbs;
     private String gramsFat;
     private String timeToCook;
+    public Meals() {
+    }
 
+    public Meals(String mealType, String mealName, int calories, String gramsProtein, String gramsCarbs, String gramsFat, String timeToCook) {
+        this.mealType = mealType;
+        this.mealName = mealName;
+        this.calories = calories;
+        this.gramsProtein = gramsProtein;
+        this.gramsCarbs = gramsCarbs;
+        this.gramsFat = gramsFat;
+        this.timeToCook = timeToCook;
+    }
 
     public int getId() {
         return id;
@@ -76,5 +93,19 @@ public class Meals {
         this.timeToCook = timeToCook;
     }
 
+    @Override
+    public String toString() {
+        return "Meals{" +
+                "id=" + id +
+                ", mealType='" + mealType + '\'' +
+                ", mealName='" + mealName + '\'' +
+                ", calories=" + calories +
+                ", gramsProtein='" + gramsProtein + '\'' +
+                ", gramsCarbs='" + gramsCarbs + '\'' +
+                ", gramsFat='" + gramsFat + '\'' +
+                ", timeToCook='" + timeToCook + '\'' +
+                '}';
+    }
 }
+
 

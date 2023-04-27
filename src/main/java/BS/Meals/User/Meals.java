@@ -1,4 +1,4 @@
-package BS.Meals;
+package BS.Meals.User;
 
 import jakarta.persistence.*;
 import lombok.Data;

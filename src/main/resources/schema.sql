@@ -1,10 +1,10 @@
 create table meals(
     id int NOT NULL auto_increment,
-    mealType varchar(255) NOT NULL,
-    mealName varchar(255) NOT NULL,
+    meal_type varchar(255) NOT NULL,
+    meal_name varchar(255) NOT NULL,
     calories int NOT NULL,
-    gramsProtein varchar(255) NOT NULL,
-    gramsCarbs varchar(255) NOT NULL,
-    gramsFat varchar(255) NOT NULL,
-    timeToCook varchar(255) NOT NULL
+    grams_protein varchar(255) NOT NULL,
+    grams_carbs varchar(255) NOT NULL,
+    grams_fat varchar(255) NOT NULL,
+    time_to_cook varchar(255) NOT NULL
 );

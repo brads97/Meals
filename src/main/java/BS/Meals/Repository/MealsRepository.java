@@ -9,4 +9,7 @@ public interface MealsRepository extends JpaRepository <Meals, Integer> {
     List<Meals> findByMealNameContaining(String name);
     List<Meals> findByMealTypeAndMealNameContaining(String type, String name);
     List<Meals> findByMealTypeAndMealNameContainingIgnoreCaseAndCaloriesLessThanEqual(String type, String name, int calories);
+    Long countByMealNameContainingIgnoreCase(String name);
+    Long countByMealTypeAndMealNameContainingIgnoreCase(String mealType, String mealName);
+
 }

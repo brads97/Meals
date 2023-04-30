@@ -8,9 +8,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
+import java.util.Map;
 
 @RestController
-@RequestMapping("/all-meals")
+@RequestMapping("/meals")
 public class MealsController {
 
     private final MealsService mealsService;
@@ -31,8 +32,17 @@ public class MealsController {
     @GetMapping("/lunch")
     public List<Meals> lunchBeefMeal() {
         return mealsService.lunchBeefMeal();
-    }@GetMapping("/breakfast")
+    }
+    @GetMapping("/breakfast")
     public List<Meals> breakfastMeal() {
         return mealsService.breakfastMeal();
+    }
+    @GetMapping("/mealcount")
+    public Map<String, Long> mealCount() {
+        return mealsService.mealCount();
+    }
+    @GetMapping("/dinnercount")
+    public Map<String, Long> mealDinnerCount() {
+        return mealsService.mealDinnerCount();
     }
 }

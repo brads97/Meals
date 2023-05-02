@@ -4,6 +4,7 @@ import BS.Meals.User.Meals;
 import BS.Meals.Service.MealsService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -44,5 +45,9 @@ public class MealsController {
     @GetMapping("/dinnercount")
     public Map<String, Long> mealDinnerCount() {
         return mealsService.mealDinnerCount();
+    }
+    @RequestMapping("/userMeal")
+    public List<Meals> userMeal(@RequestBody Meals userMeal) {
+        return mealsService.getUserMeal(userMeal.getMealType(), userMeal.getMealName());
     }
 }

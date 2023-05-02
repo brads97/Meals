@@ -42,4 +42,7 @@ public class MealsService {
         return countMap;
     }
 
+    public List<Meals> getUserMeal(String mealType, String mealName) {
+        return mealsRepository.
+    }
 }

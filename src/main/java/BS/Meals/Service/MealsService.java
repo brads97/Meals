@@ -43,6 +43,6 @@ public class MealsService {
     }
 
     public List<Meals> getUserMeal(String mealType, String mealName) {
-        return mealsRepository.
+        return mealsRepository.findByMealTypeAndMealNameContaining(mealType,mealName);
     }
 }

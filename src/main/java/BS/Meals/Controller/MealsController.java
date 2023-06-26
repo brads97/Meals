@@ -13,6 +13,7 @@ import java.util.Map;
 public class MealsController {
 
     private final MealsService mealsService;
+
     @Autowired
     public MealsController(MealsService mealsService) {
         this.mealsService = mealsService;
@@ -27,24 +28,28 @@ public class MealsController {
     public List<Meals> chickenMeals() {
         return mealsService.chickenMeals();
     }
+
     @GetMapping("/lunch")
     public List<Meals> lunchBeefMeal() {
         return mealsService.lunchBeefMeal();
     }
-    @GetMapping("/breakfast")
-    public List<Meals> breakfastMeal() {
-        return mealsService.breakfastMeal();
-    }
-    @GetMapping("/mealcount")
-    public Map<String, Long> mealCount() {
-        return mealsService.mealCount();
-    }
-    @GetMapping("/dinnercount")
-    public Map<String, Long> mealDinnerCount() {
-        return mealsService.mealDinnerCount();
-    }
-    @PostMapping("/userMeal")
-    public List<Meals> userMeal(@RequestBody Meals userMeal) {
-        return mealsService.getUserMeal(userMeal.getMealType(), userMeal.getMealName());
-    }
 }
+
+
+//    @GetMapping("/breakfast")
+//    public List<Meals> breakfastMeal() {
+//        return mealsService.breakfastMeal();
+//    }
+//    @GetMapping("/mealcount")
+//    public Map<String, Long> mealCount() {
+//        return mealsService.mealCount();
+//    }
+//    @GetMapping("/dinnercount")
+//    public Map<String, Long> mealDinnerCount() {
+//        return mealsService.mealDinnerCount();
+//    }
+//    @PostMapping("/userMeal")
+//    public List<Meals> userMeal(@RequestBody Meals userMeal) {
+//        return mealsService.getUserMeal(userMeal.getMealType(), userMeal.getMealName());
+//    }
+

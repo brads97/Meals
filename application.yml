@@ -1,5 +1,0 @@
-spring:
-  data:
-    mongo:
-      url: mongodb+srv://<BSProject>:<Ultranumb97>@bsproject.knwo8qd.mongodb.net/?retryWrites=true&w=majority
-      database: BSProject
